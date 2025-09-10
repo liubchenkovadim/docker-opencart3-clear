@@ -9,6 +9,7 @@ Check status
 
 Optional: full Docker cleanup (GLOBAL — will remove everything unused)
 
+    docker stop $(docker ps -q)
     docker system prune -a --volumes -f
     docker rmi $(docker images -q)
     docker system prune -a --volumes
@@ -30,7 +31,7 @@ start the build
 
     docker compose up -d --build
 
-When you first start, a dump of a clean CMS will be loaded into the database 
+When you first start, a dump of a clean CMS will be loaded into the database
 
 projects create their own components and different cms will not overwrite each other.
 
